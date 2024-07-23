@@ -1,6 +1,5 @@
-workspace = { members = ["compiler/ast"] }
 [package]
-name = "blastfurnace-workspaces"
+name = "ast"
 version = "0.1.0"
 edition = "2021"
 
