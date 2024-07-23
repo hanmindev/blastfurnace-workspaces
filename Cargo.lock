@@ -11,5 +11,5 @@ name = "blastfurnace-workspaces"
 version = "0.1.0"
 
 [[package]]
-name = "lowering"
+name = "name_mangler"
 version = "0.1.0"
