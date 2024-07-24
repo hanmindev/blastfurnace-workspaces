@@ -63,7 +63,7 @@ pub enum TyKind {
 /// A struct definition
 #[derive(Debug, PartialEq, Clone)]
 pub struct Struct {
-    pub field: Vec<StructField>,
+    pub fields: Vec<StructField>,
 }
 /// A struct field
 ///
