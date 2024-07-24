@@ -6,7 +6,8 @@ use crate::ptr::P;
 use std::fmt::Debug;
 
 /// An identifier
-type Ident = String;
+#[derive(Debug, PartialEq, Clone)]
+pub struct Ident(String);
 
 /// A "name".
 ///
