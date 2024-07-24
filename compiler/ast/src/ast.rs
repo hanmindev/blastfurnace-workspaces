@@ -1,7 +1,6 @@
 /// The AST module contains the definitions of the various types that make up the AST.
 ///
 /// If you add anything here, you should look into updating the `visitor` module as well.
-
 use crate::ptr::P;
 use std::fmt::Debug;
 

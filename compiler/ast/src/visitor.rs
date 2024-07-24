@@ -61,7 +61,6 @@ pub trait Visitable<T: Visitor<K, V>, K, V> {
     fn visit(&mut self, visitor: &mut T) -> Result<Option<K>, V>;
 }
 
-
 impl<T: Visitor<K, V>, K, V> Visitable<T, K, V> for Ident {
     fn visit(&mut self, visitor: &mut T) -> Result<Option<K>, V> {
         Ok(visitor.apply(&mut ASTNodeEnum::Ident(self))?.1)
@@ -111,7 +110,9 @@ impl<T: Visitor<K, V>, K, V> Visitable<T, K, V> for Ty {
         let (visit_result, res) = visitor.apply(&mut ASTNodeEnum::Ty(self))?;
         if visit_result {
             match &mut self.kind {
-                TyKind::Path(ref mut p) => { p.visit(visitor)?; }
+                TyKind::Path(ref mut p) => {
+                    p.visit(visitor)?;
+                }
                 _ => {}
             };
         };
@@ -220,7 +221,9 @@ impl<T: Visitor<K, V>, K, V> Visitable<T, K, V> for LocalBind {
         if visit_result {
             match self.kind {
                 LocalBindKind::Decl => {}
-                LocalBindKind::Init(ref mut e) => { e.visit(visitor)?; }
+                LocalBindKind::Init(ref mut e) => {
+                    e.visit(visitor)?;
+                }
             }
         };
         Ok(res)
