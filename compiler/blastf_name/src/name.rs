@@ -2,6 +2,7 @@ use crate::module::Path;
 use std::fmt::Display;
 
 /// A name. This is the unique identifier for a definition.
+#[derive(Debug, Clone)]
 pub struct Name {
     ident: String,
     path: Path,
