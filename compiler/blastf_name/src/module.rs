@@ -5,28 +5,30 @@ use std::fmt::Display;
 /// This is a series of segments separated by `::`.
 ///
 /// E.g., `root::foo::bar`.
-pub struct ModulePath {
-    segments: Vec<ModulePathSegment>,
+#[derive(Debug, Clone)]
+pub struct Path {
+    segments: Vec<PathSegment>,
 }
 
 /// A segment of a path.
 ///
 /// E.g., `foo` in `root::foo::bar`.
-struct ModulePathSegment {
+#[derive(Debug, Clone)]
+struct PathSegment {
     ident: String,
 }
 
-impl ModulePath {
+impl Path {
     /// Create a new, empty path.
-    pub fn new() -> ModulePath {
-        ModulePath {
+    pub fn new() -> Path {
+        Path {
             segments: Vec::new(),
         }
     }
 
     /// Push an ident segment onto the path.
     pub fn push(&mut self, ident: String) {
-        self.segments.push(ModulePathSegment { ident });
+        self.segments.push(PathSegment { ident });
     }
 
     /// Get the root segment of the path, i.e. the first segment.
@@ -60,12 +62,12 @@ impl ModulePath {
     }
 
     /// Extend this path with another path.
-    pub fn extend(&mut self, other: ModulePath) {
+    pub fn extend(&mut self, other: Path) {
         self.segments.extend(other.segments);
     }
 }
 
-impl Display for ModulePath {
+impl Display for Path {
     /// The name is displayed as a series of segments separated by ::
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         for (i, segment) in self.segments.iter().enumerate() {

@@ -1,16 +1,17 @@
-use crate::module_path::ModulePath;
+use crate::module::Path;
 use std::fmt::Display;
 
 /// A name. This is the unique identifier for a definition.
+#[derive(Debug, Clone)]
 pub struct Name {
     ident: String,
-    path: ModulePath,
+    path: Path,
     id: usize,
 }
 
 impl Name {
     /// Create a new name.
-    pub fn new(ident: String, path: ModulePath, id: usize) -> Name {
+    pub fn new(ident: String, path: Path, id: usize) -> Name {
         Name { ident, path, id }
     }
 
@@ -20,7 +21,7 @@ impl Name {
     }
 
     /// Get the module path of the name
-    pub fn path(&self) -> &ModulePath {
+    pub fn path(&self) -> &Path {
         &self.path
     }
 
