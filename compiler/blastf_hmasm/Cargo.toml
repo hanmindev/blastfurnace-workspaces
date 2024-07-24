@@ -1,15 +1,9 @@
-[workspace]
-members = [
-    "compiler/blastf_ast",
-    "compiler/blastf_name",
-    "compiler/blastf_hmasm"
-]
-
 [package]
-name = "blastfurnace-workspaces"
+name = "blastf_hmasm"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+blastf_name = { path = "../blastf_name" }

@@ -7,6 +7,13 @@ name = "blastf_ast"
 version = "0.1.0"
 
 [[package]]
+name = "blastf_hmasm"
+version = "0.1.0"
+dependencies = [
+ "blastf_name",
+]
+
+[[package]]
 name = "blastf_name"
 version = "0.1.0"
 
