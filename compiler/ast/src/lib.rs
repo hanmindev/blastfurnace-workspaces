@@ -1,3 +1,3 @@
-mod ast;
-mod ptr;
-mod visitor;
+pub mod ast;
+pub mod ptr;
+pub mod visitor;
