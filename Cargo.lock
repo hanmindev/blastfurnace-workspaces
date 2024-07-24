@@ -3,13 +3,13 @@
 version = 3
 
 [[package]]
-name = "ast"
+name = "blastf_ast"
+version = "0.1.0"
+
+[[package]]
+name = "blastf_name"
 version = "0.1.0"
 
 [[package]]
 name = "blastfurnace-workspaces"
-version = "0.1.0"
-
-[[package]]
-name = "name"
 version = "0.1.0"

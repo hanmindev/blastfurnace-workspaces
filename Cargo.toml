@@ -1,4 +1,9 @@
-workspace = { members = ["compiler/ast", "compiler/name"] }
+[workspace]
+members = [
+    "compiler/blastf_ast",
+    "compiler/blastf_name"
+]
+
 [package]
 name = "blastfurnace-workspaces"
 version = "0.1.0"
